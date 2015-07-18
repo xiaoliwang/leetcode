@@ -1,0 +1,1 @@
+delete from Person where Email in (select Email from Person t1 group by Email having count(*) > 1) t;

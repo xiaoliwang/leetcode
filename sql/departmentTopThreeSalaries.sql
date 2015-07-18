@@ -1,0 +1,2 @@
+--first Solusion
+SELECT t2.Name Department, t1.Name Employee, t1.Salary From Employee t1 INNER JOIN Department t2 ON t1.DepartmentId = t2.Id WHERE 3 > (select count(distinct t3.Salary) from Employee t3 where t3.Salary > t1.Salary and t3.DepartmentId = t1.DepartmentId);
