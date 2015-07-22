@@ -3,7 +3,7 @@
  * @return {number}
  */
 var lengthOfLongestSubstring = function(s) {
-	    var m = [];
+	var m = [];
     var maxLen = 0, lastRepeatPos = -1;
 	for(var i = 0; i < s.length; i++){
 		if (m[s[i]] !== undefined && lastRepeatPos < m[s[i]]){
@@ -17,7 +17,4 @@ var lengthOfLongestSubstring = function(s) {
 	return maxLen;
 };
 
-
-s = 'abdcabcdbb';
-var maxLen = lengthOfLongestSubstring(s);
-console.log(maxLen);
+module.exports = lengthOfLongestSubstring;

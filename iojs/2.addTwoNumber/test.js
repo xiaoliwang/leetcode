@@ -1,6 +1,6 @@
 var chai = require('chai'),
-	h1 = require('./firstSolusion'),
-	h2 = require('./secondSolusion');
+	h1 = require('./firstSolution'),
+	h2 = require('./secondSolution');
 var should = chai.should(),
 	expect = chai.expect;
 
@@ -20,7 +20,7 @@ describe("add Two Numbers<https://leetcode.com/problems/add-two-numbers/>", func
 	
 	var m1 = m2 = new ListNode(0);
 	
-	it('first solusion', function(){
+	it('first solution', function(){
 		var l3 = h1(l1, l2);
 		expect(l3.val).to.equal(7);
 		expect(l3.next.val).to.equal(0);
@@ -31,7 +31,7 @@ describe("add Two Numbers<https://leetcode.com/problems/add-two-numbers/>", func
 		expect(m3.next).to.equal(null);
 	});
 	
-	it('second Solusion', function(){
+	it('second Solution', function(){
 		var l3 = h2(l1,l2);
 		expect(l3.val).to.equal(7);
 		expect(l3.next.val).to.equal(0);
