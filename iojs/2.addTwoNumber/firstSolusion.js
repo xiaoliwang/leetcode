@@ -1,6 +1,3 @@
-var chai = require('chai');
-var should = chai.should();
-
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -45,17 +42,4 @@ var addTwoNumbers = function(l1, l2) {
 	return l4.next?l4.next:l4;
 };
 
-describe("add Two Numbers", function(){
-	it('Input: (2 -> 4 -> 3) + (5 -> 6 -> 4);\n Output: 7 -> 0 -> 8', function(){
-		var l1 = new ListNode(2);
-			l1.next = new ListNode(4);
-			l1.next.next = new ListNode(3);
-		var l2 = new ListNode(5);
-			l2.next = new ListNode(6);
-			l2.next.next = new ListNode(4);
-		//var l1 = new ListNode(0);
-		//var l2 = new ListNode(0)
-		var l4 = addTwoNumbers(l1, l2);
-		console.log(l4);
-	});
-});
+module.exports = addTwoNumbers;
