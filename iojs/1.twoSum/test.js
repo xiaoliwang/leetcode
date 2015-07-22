@@ -10,5 +10,6 @@ describe("Two Sum<https://leetcode.com/problems/two-sum/>", function(){
 		var indexs = h1(numbers, target);
 		expect(indexs).to.be.a('Array');
 		expect(indexs).to.have.length(2);
+		expect(indexs).to.include.members([1,2]);
 	});
 });
