@@ -1,6 +1,7 @@
 var chai = require('chai'),
 	h1 = require('./firstSolution'),
-	h2 = require('./secondSolution');
+	h2 = require('./secondSolution'),
+	h3 = require('./thirdSolution');
 var should = chai.should();
 	
 describe('first solution<https://leetcode.com/problems/single-number/>', function(){
@@ -25,4 +26,12 @@ describe('first solution<https://leetcode.com/problems/single-number/>', functio
 		});
 	});
 
+	it('third solution',function(){
+		tests.forEach(function(test){
+			var singleNum = h3.call(null, test.arg);
+			singleNum.should.be.a('Number');
+			singleNum.should.equal(test.expect);
+		});
+	});
+	
 });
