@@ -5,36 +5,35 @@ var chai = require('chai'),
 var should = chai.should();
 
 describe('is HappyNumber<https://leetcode.com/problems/happy-number/>',function(){
+	var tests = [
+		{arg: 1, expected: true, info: ''},
+		{arg: 20, expected: false, info: 'not'}
+	]
+	
 	describe('first solution', function(){
-		it('19 is a happy number', function(){
-			var result = h1(19);
-			result.should.be.true;
-		});
-		it('20 is not a happy number', function(){
-			var result = h1(20);
-			result.should.be.false;
+		tests.forEach(function(test){
+			it( test.arg + 'is '+test.info+' a happy number', function(){
+				var result = h1(test.arg);
+				result.should.equal(test.expected);
+			});
 		});
 	});
 	
 	describe('second solution', function(){
-		it('19 is a happy number', function(){
-			var result = h2(19);
-			result.should.be.true;
-		});
-		it('20 is not a happy number', function(){
-			var result = h2(20);
-			result.should.be.false;
+		tests.forEach(function(test){
+			it( test.arg + 'is '+test.info+' a happy number', function(){
+				var result = h2(test.arg);
+				result.should.equal(test.expected);
+			});
 		});
 	});
 	
 	describe('third solution', function(){
-		it('19 is a happy number', function(){
-			var result = h3(19);
-			result.should.be.true;
-		});
-		it('20 is not a happy number', function(){
-			var result = h3(20);
-			result.should.be.false;
+		tests.forEach(function(test){
+			it( test.arg + 'is '+test.info+' a happy number', function(){
+				var result = h3(test.arg);
+				result.should.equal(test.expected);
+			});
 		});
 	});
 });

@@ -8,7 +8,7 @@ var findMedianSortedArrays = function(nums1, nums2) {
 	var len2 = nums2.length;
 	var len = len1 + len2;
 	
-    var middle_pos  = ((len1 ^ len2) >> 1) + (len1 & len2);
+    var half_pos  = ((len1 ^ len2) >> 1) + (len1 & len2);
 	len1 = --len1;
 	len2 = --len2;
 	
@@ -19,7 +19,7 @@ var findMedianSortedArrays = function(nums1, nums2) {
 	var temp = undefined;
 	var end = 0;
 
-	for (var i = 0; i <= middle_pos; ++i){
+	for (var i = 0; i <= half_pos; ++i){
 		if (nums1[len1] > nums2[len2] && nums1[len1]){
 			median = nums1[len1];
 			end = --len1;
@@ -33,7 +33,7 @@ var findMedianSortedArrays = function(nums1, nums2) {
 			end = --len1;
 			type =1;
 		}
-		if ( !odd && (i === middle_pos - 1)){
+		if ( !odd && (i === half_pos - 1)){
 			temp = median;	
 		}
 	}

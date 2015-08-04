@@ -26,4 +26,4 @@ var longestPalindrome = function(s) {
 	return s.substr(start, max_len);
 };
 
-console.log(longestPalindrome('1234212'));
+module.exports = longestPalindrome;
