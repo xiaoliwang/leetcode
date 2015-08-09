@@ -38,7 +38,9 @@ describe('median of two sorted arrays<https://leetcode.com/problems/median-of-tw
 		{ones: [2,3], twos: [1,4,5], expected: 3},
 		{ones: [2,3,6], twos: [1,4,5], expected: 3.5},
 		{ones: [2,3,4], twos: [1,5,6], expected: 3.5},
-		{ones: [2], twos: [1,2,3], expected: 2}
+		{ones: [2], twos: [1,2,3], expected: 2},
+		{ones: [5], twos: [1,2,3,4,6,7], expected: 4},
+		{ones: [5], twos: [3,4,6,7,8,9], expected: 6}
 	];
 	
 	describe('first solution', function(){
