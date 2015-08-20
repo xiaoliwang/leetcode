@@ -25,13 +25,4 @@ describe('regular expression matching<https://leetcode.com/problems/regular-expr
 			});
 		});
 	});
-	
-	/**describe('second solution', function(){
-		tests.forEach(function(test, index){
-			it('args'+index, function(){
-				var code = h2(test.string, test.match);
-				code.should.equal(test.expected);
-			});
-		});
-	});*/
 });
