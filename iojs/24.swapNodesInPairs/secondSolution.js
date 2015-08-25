@@ -12,14 +12,16 @@
 var swapPairs = function(head) {
 	if (!head || !head.next) return head;
 	var new_head = head.next;
-	var temp = head;
-	while (temp && temp.next && temp.next.next) {
-		var node = temp.next;
-		temp.next = node.next;
-		node.next = temp;
-		node = temp.next;
-		temp.next = temp.next.next;
-		temp = node;
+	while (head && head.next) {
+		//以下为节点交换
+		var node = head.next;
+		head.next = node.next;
+		node.next = head;
+		//如果节点存在，则预处理数据
+		if (!head.next || !head.next.next) break;
+		node = head.next;
+		head.next = node.next;
+		head = node;
 	}
 	return new_head;
 };
