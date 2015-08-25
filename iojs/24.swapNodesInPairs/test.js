@@ -22,39 +22,37 @@ function createList(list) {
 	return start;
 }
 
-describe("Merge Two Sorted Lists<https://leetcode.com/problems/merge-two-sorted-lists/>", function(){
+describe("Swap Nodes in Pairs<https://leetcode.com/problems/swap-nodes-in-pairs/>", function(){
 	var tests = [
-		{list1:[1, 2, 3, 4, 5], list2:[1, 2, 3, 4, 5], expect: [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]},
-		{list1:[1, 2, 3,], list2:[1, 2, 3, 4, 5], expect: [1, 1, 2, 2, 3, 3, 4, 5]},
-		{list1:[], list2:[1, 2, 3, 4, 5], expect: [1, 2, 3, 4, 5]},
-		{list1:[1, 2, 3, 4, 5], list2:[], expect: [1, 2, 3, 4, 5]},
-		{list1:[1, 2, 3], list2:[1, 2, 3, 4, 5], expect: [1, 1, 2, 2, 3, 3, 4, 5]}
+		//{arg: [1], expect:[1]},
+		{arg: [1, 2], expect:[2, 1]},
+		//{arg: [1, 2, 3], expect:[2, 1, 3]},
+		//{arg: [1, 2, 3, 4], expect: [2, 1, 4, 3]},
+		//{arg: [1, 2, 3, 4, 5], expect: [2, 1, 4, 3, 5]},
+		//{arg: [1, 2, 3, 4, 5, 6], expect: [2, 1, 4, 3, 6, 5]}
 	]
-	
 	
 	describe('first solution', function(){
 		tests.forEach(function(test, index){
 			it('args'+index, function(){
-				var list1 = createList(test.list1);
-				var list2 = createList(test.list2);
+				var arg_list = createList(test.arg);
 				var exp_list = createList(test.expect);
-				var real_list = h1(list1, list2);
+				var real_list = h1(arg_list);
 				do {
 					expect(real_list.val).to.equal(exp_list.val);
 					real_list = real_list.next;
 					exp_list = exp_list.next;
-				} while (real_list || exp_list);
+				} while (real_list && exp_list);
 			});
 		});
 	});
 	
-	describe('first solution', function(){
+	describe('second solution', function(){
 		tests.forEach(function(test, index){
 			it('args'+index, function(){
-				var list1 = createList(test.list1);
-				var list2 = createList(test.list2);
+				var arg_list = createList(test.arg);
 				var exp_list = createList(test.expect);
-				var real_list = h2(list1, list2);
+				var real_list = h2(arg_list);
 				do {
 					expect(real_list.val).to.equal(exp_list.val);
 					real_list = real_list.next;

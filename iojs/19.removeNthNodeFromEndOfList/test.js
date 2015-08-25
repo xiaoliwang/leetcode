@@ -40,7 +40,7 @@ describe("Remove Nth Node From End of List<https://leetcode.com/problems/remove-
 					expect(real_list.val).to.equal(exp_list.val);
 					real_list = real_list.next;
 					exp_list = exp_list.next;
-				} while (real_list && exp_list);
+				} while (real_list || exp_list);
 			});
 		});
 	});
@@ -55,7 +55,7 @@ describe("Remove Nth Node From End of List<https://leetcode.com/problems/remove-
 					expect(real_list.val).to.equal(exp_list.val);
 					real_list = real_list.next;
 					exp_list = exp_list.next;
-				} while (real_list && exp_list);
+				} while (real_list || exp_list);
 			});
 		});
 	});
