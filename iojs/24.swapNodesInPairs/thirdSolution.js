@@ -12,7 +12,7 @@
 var swapPairs = function(head) {
 	if (!head || !(head.next)) return head;
 	var new_head = head.next;
-	head.next = swapPairs(head.next.next);
+	head.next = swapPairs(new_head.next);
 	new_head.next = head;
 	return new_head;
 }

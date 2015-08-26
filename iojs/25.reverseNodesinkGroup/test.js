@@ -23,9 +23,10 @@ function createList(list) {
 
 describe("Reverse Nodes in k-Group<https://leetcode.com/problems/reverse-nodes-in-k-group/>", function(){
 	var tests = [
+		{arg: [1, 2, 3], k: 1, expect:[1, 2, 3]},
 		{arg: [1, 2, 3], k: 2, expect:[2, 1, 3]},
-		{arg: [1, 2, 3, 4], k: 3, expect: [3, 2, 1, 4]},
-		{arg: [1, 2, 3, 4, 5], k: 4, expect: [4, 3, 2, 1, 5]}
+		{arg: [1, 2, 3, 4, 5], k: 3, expect: [3, 2, 1, 4, 5]},
+		{arg: [1, 2, 3, 4, 5, 6, 7], k: 4, expect: [4, 3, 2, 1, 5, 6 ,7]}
 	]
 	
 	describe('first solution', function(){
@@ -38,7 +39,7 @@ describe("Reverse Nodes in k-Group<https://leetcode.com/problems/reverse-nodes-i
 					expect(real_list.val).to.equal(exp_list.val);
 					real_list = real_list.next;
 					exp_list = exp_list.next;
-				} while (real_list && exp_list);
+				} while (real_list || exp_list);
 			});
 		});
 	});
