@@ -11,19 +11,28 @@
  * @return {ListNode}
  */
 var reverseKGroup = function(head, k) {
-	var curr = head;
-	var count = 0;
-	while (curr) {
-		curr = curr.next;
-		++count;
-		
-		if (count === k) {
-			while (count --) {
-				var temp = head.next;
-				head.next = curr;
-				curr = head;
-				head = temp;
-			}
-		} 
+	if (k === 1 || !head)
+		return head;
+	var end = head;
+	for (var i = 1; i < k && head.next; i++) {
+		head = head.next;
 	}
+	if (i === k) {
+		var current = end;
+		var next = end.next;
+		end.next = head.next;
+		while (next !== head) {
+			temp = next.next;
+			next.next = current;
+			current = next;
+			next = temp;
+		}
+		next.next = current;
+		end.next = reverseKGroup(end.next, k);
+	} else {
+		head = end;
+	}
+	return head;
 }
+
+module.exports = reverseKGroup;
